@@ -1,12 +1,17 @@
 .hidden {
-  display:none;
+  display: none;
 }
 
 #board {
-background: radial-gradient(ellipse at 62% 0%,rgba(98, 91, 107, 1), rgba(46, 44, 48, 1));
+  background: radial-gradient(
+    ellipse at 62% 0%,
+    rgba(98, 91, 107, 1),
+    rgba(46, 44, 48, 1)
+  );
   height: 100vh;
   width: 100vw;
-  overflow:hidden;
+  overflow: hidden;
+  position: absolute;
 }
 
 #board .clue-holder {
@@ -21,27 +26,32 @@ background: radial-gradient(ellipse at 62% 0%,rgba(98, 91, 107, 1), rgba(46, 44,
 }
 
 @keyframes shake-horizontal {
-    0%,to {
-        transform: translateX(0)
-    }
+  0%,
+  to {
+    transform: translateX(0);
+  }
 
-    10%,30%,50%,70% {
-        transform: translateX(-100px)
-    }
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateX(-100px);
+  }
 
-    20%,40%,60% {
-        transform: translateX(100px)
-    }
+  20%,
+  40%,
+  60% {
+    transform: translateX(100px);
+  }
 
-    80% {
-        transform: translateX(80px)
-    }
+  80% {
+    transform: translateX(80px);
+  }
 
-    90% {
-        transform: translateX(-80px)
-    }
+  90% {
+    transform: translateX(-80px);
+  }
 }
-
 
 @keyframes rise {
   from {
@@ -57,7 +67,7 @@ background: radial-gradient(ellipse at 62% 0%,rgba(98, 91, 107, 1), rgba(46, 44,
 }
 
 #top-container .clue-holder {
-  display:block;
+  display: block;
   width: 100%;
 }
 
@@ -67,13 +77,14 @@ background: radial-gradient(ellipse at 62% 0%,rgba(98, 91, 107, 1), rgba(46, 44,
   line-height: 1.2em;
   padding: 2em;
   letter-spacing: 0.05em;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   overflow-wrap: break-word;
 }
 .hex {
   aspect-ratio: 1 / cos(30deg);
   clip-path: polygon(50% -50%, 100% 50%, 50% 150%, 0 50%);
   background: #3b8686;
+  max-width: 300px;
 }
 .paral {
   --p: 20%; /* control the shape (can be percentage) */
@@ -91,7 +102,6 @@ background: radial-gradient(ellipse at 62% 0%,rgba(98, 91, 107, 1), rgba(46, 44,
 
 .curved {
   --c: 2em; /* control the curvature (works with percentage) */
-  aspect-ratio: 1;
   /* you can also update the 60%  */
   mask: radial-gradient(
       60% var(--c) at 50% var(--c),
@@ -157,13 +167,19 @@ background: radial-gradient(ellipse at 62% 0%,rgba(98, 91, 107, 1), rgba(46, 44,
 
 .ribbon {
   --r: 1.8em; /* control the ribbon shape */
-  padding-inline: calc(var(--r)/4);
-  clip-path: polygon(0 0,100% 0,calc(100% - var(--r)) 50%,100% 100%,0 100%, var(--r) 50%);
-  background: #CC333F; /* the main color */
+  padding-inline: calc(var(--r) / 4);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    calc(100% - var(--r)) 50%,
+    100% 100%,
+    0 100%,
+    var(--r) 50%
+  );
+  background: #cc333f; /* the main color */
   width: fit-content;
 }
 
 .box {
   height: 100px;
-  
 }
